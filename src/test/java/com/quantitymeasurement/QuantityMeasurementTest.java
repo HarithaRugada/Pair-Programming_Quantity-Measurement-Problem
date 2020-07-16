@@ -20,12 +20,13 @@ public class QuantityMeasurementTest {
         Assert.assertTrue(result);
     }
     @Test
-    public void given1Feet_WhenComparedBy12Inch_ShouldReturnTrue() throws QuantityMeasurementException {
+    public void given1Feet_WhenComparedBy12Inch_ShouldReturnTrue() {
         QuantityMeasurement q1 = new QuantityMeasurement(1.0, QuantityMeasurement.Unit.FEET);
         q1 = quantityMeasurement.convertValue(q1, UnitConversion.FEET_TO_INCH);
         boolean result = q1.equals(new QuantityMeasurement(12.0, QuantityMeasurement.Unit.INCH));
         Assert.assertTrue(result);
     }
+
 
 
 }
