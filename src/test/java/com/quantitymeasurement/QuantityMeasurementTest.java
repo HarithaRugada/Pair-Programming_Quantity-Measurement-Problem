@@ -1,6 +1,7 @@
 package com.quantitymeasurement;
 
 import com.quantitymeasurement.service.QuantityMeasurement;
+import com.quantitymeasurement.utility.UnitConversion;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,6 +28,13 @@ public class QuantityMeasurementTest {
         Assert.assertTrue(result);
     }
 
+    @Test
+    public void given1Yard_WhenComparedBy36Inch_ShouldReturnTrue() {
+        QuantityMeasurement q1 = new QuantityMeasurement(1.0, QuantityMeasurement.Unit.YARD);
+        q1 = quantityMeasurement.convertValue(q1, UnitConversion.YARD_TO_INCH);
+        boolean result = q1.equals(new QuantityMeasurement(36.0, QuantityMeasurement.Unit.INCH));
+        Assert.assertTrue(result);
+    }
 
 
 }
